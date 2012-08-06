@@ -7,6 +7,7 @@
 		{{> header}}
 		{{> editor}}
 		{{> posts}}
+		{{> sidebar}}
 		{{> footer}}
 	</div>
 </body>
@@ -16,14 +17,15 @@
 </template>
 
 <template name="editor">
-	<div id="editor_wrapper">
-		<a href="#" id="add_post">Add Post</a>
+	<div id="editor_wrapper" class="drop_shadow">
+		<a href="#" id="add_post">Add New Post</a>
 		<div id="editor">
 			<p>Post Title</p>
 			<p><input name="editor_content" class="title" type="text"></p>
 			<p>Content</p>
 			<p><textarea name="content" class="content" cols="50" rows="15"></textarea></p>
 			<p><input id="submit_post" type="submit" value="Submit"></p>
+			<a href="#" id="cancel_post">Cancel</a>
 		</div>
 	</div>
 </template>
@@ -31,19 +33,27 @@
 <template name="posts">
 		<div id="posts">
 			{{#each posts}}
-				<div id={{_id}} class="post">
+				<div id="{{_id}}" class="post drop_shadow">
 					<h1 class="title" contentEditable="true">{{title}}</h1>
 					<h2>Posted on <span class="date" contentEditable="true">{{date}}</span></h2>
 					<p class="content" contentEditable="true">{{content}}</p>
-					<a href="#" class="update_post">Update</a>
+					<a href="#" class="update_post">Update</a> |
+					<a href="#" class="delete_post">Delete</a>
 				</div>
 			{{/each}}
 		</div>
 </template>
 
 <template name="sidebar">
-	<aside id="sidebar">
-		
+	<aside id="sidebar" class="drop_shadow">
+		<div id="latest_posts">
+			<h1>Latest Posts</h1>
+			<ul id="latest">
+			{{#each posts}}
+				<li>{{title}}</li>
+			{{/each}}
+			</ul>
+		</div>
 	</aside>
 </template>
 

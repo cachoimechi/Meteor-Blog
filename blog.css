@@ -14,6 +14,12 @@ p {
 	margin: auto;
 }
 
+/* Helper Styles */
+
+.drop_shadow {
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+}
+
 /* Header Styles */
 
 header {
@@ -21,6 +27,12 @@ header {
 }
 
 /* Editor Styles */
+
+#editor_wrapper {
+	background: white;
+	border: 1px solid #ddd;
+	padding: 10px;
+}
 
 #add_post {
 	text-decoration: none;
@@ -35,13 +47,11 @@ header {
 #posts {
 	width: 70%;
 	float: left;
-	background: white;
-	border: 1px solid #ddd;
 }
 
 .post {
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 10px;
+	background: white;
+	border: 1px solid #ddd;
 	margin-top: 10px;
 	padding: 10px;
 }
@@ -58,19 +68,17 @@ header {
 
 .post p {
 	font-size: 14px;
-	margin: 2px 0;
+	margin: 5px 0 10px 0;
 }
 
-.edit_post {
+.update_post,
+.delete_post {
 	text-decoration: none;
 }
 
-.edit_post:hover {
+.update_post:hover,
+.delete_post:hover {
 	text-decoration: underline;
-}
-
-.update_post {
-	
 }
 
 /* Sidebar Styles */
@@ -78,6 +86,18 @@ header {
 #sidebar {
 	width: 25%;
 	float: right;
+	margin-top: 10px;
+	background: white;
+	border: 1px solid #ddd;
+	padding: 10px;
+}
+
+#latest {
+	padding-left: 10px;
+}
+
+#latest li {
+	list-style-type: none;
 }
 
 /* Footer Styles */
