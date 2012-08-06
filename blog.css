@@ -1,0 +1,88 @@
+/* Common Styles */
+
+html, body {
+	font-family: sans-serif;
+	background: #efefef;
+}
+
+p {
+	margin: 2px 0;
+}
+
+#wrapper {
+	width: 960px;
+	margin: auto;
+}
+
+/* Header Styles */
+
+header {
+	width: 100%;
+}
+
+/* Editor Styles */
+
+#add_post {
+	text-decoration: none;
+}
+
+#editor {
+	display: none;
+}
+
+/* Post Styles */
+
+#posts {
+	width: 70%;
+	float: left;
+	background: white;
+	border: 1px solid #ddd;
+}
+
+.post {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+.post h1 {
+	font-size: 20px;
+	margin: 2px 0;
+}
+
+.post h2 {
+	font-size: 15px;
+	margin: 2px 0;
+}
+
+.post p {
+	font-size: 14px;
+	margin: 2px 0;
+}
+
+.edit_post {
+	text-decoration: none;
+}
+
+.edit_post:hover {
+	text-decoration: underline;
+}
+
+.update_post {
+	
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+	width: 25%;
+	float: right;
+}
+
+/* Footer Styles */
+
+footer {
+	clear: both;
+	width: 100%;
+}

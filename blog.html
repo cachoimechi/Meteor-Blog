@@ -1,0 +1,52 @@
+<head>
+  <title>blog</title>
+</head>
+
+<body>
+	<div id="wrapper">
+		{{> header}}
+		{{> editor}}
+		{{> posts}}
+		{{> footer}}
+	</div>
+</body>
+
+<template name="header">
+
+</template>
+
+<template name="editor">
+	<div id="editor_wrapper">
+		<a href="#" id="add_post">Add Post</a>
+		<div id="editor">
+			<p>Post Title</p>
+			<p><input name="editor_content" class="title" type="text"></p>
+			<p>Content</p>
+			<p><textarea name="content" class="content" cols="50" rows="15"></textarea></p>
+			<p><input id="submit_post" type="submit" value="Submit"></p>
+		</div>
+	</div>
+</template>
+
+<template name="posts">
+		<div id="posts">
+			{{#each posts}}
+				<div id={{_id}} class="post">
+					<h1 class="title" contentEditable="true">{{title}}</h1>
+					<h2>Posted on <span class="date" contentEditable="true">{{date}}</span></h2>
+					<p class="content" contentEditable="true">{{content}}</p>
+					<a href="#" class="update_post">Update</a>
+				</div>
+			{{/each}}
+		</div>
+</template>
+
+<template name="sidebar">
+	<aside id="sidebar">
+		
+	</aside>
+</template>
+
+<template name="footer">
+
+</template>
