@@ -5,7 +5,6 @@
 <body>
 	<div id="wrapper">
 		{{> header}}
-		{{> editor}}
 		{{> posts}}
 		{{> sidebar}}
 		{{> footer}}
@@ -32,16 +31,53 @@
 
 <template name="posts">
 		<div id="posts">
-			{{#each posts}}
-				<div id="{{_id}}" class="post drop_shadow">
-					<h1 class="title" contentEditable="true">{{title}}</h1>
-					<h2>Posted on <span class="date" contentEditable="true">{{date}}</span></h2>
-					<p class="content" contentEditable="true">{{content}}</p>
-					<a href="#" class="update_post">Update</a> |
-					<a href="#" class="delete_post">Delete</a>
-				</div>
-			{{/each}}
+			{{#if one_post}}
+				{{> single_post}}
+			{{else}}
+				{{#if is_admin}}<div id="breadcrumb"><a href="/">Home</a> > <a href="/admin">Admin</a></div>
+				{{> editor}}
+				{{else}}<div id="breadcrumb" class="drop_shadow"><a href="/">Home</a></div>{{/if}}
+				{{#each posts}}
+					{{#if is_admin}}
+						<div id="{{_id}}" class="post drop_shadow">
+							<h1 class="title"><a href="admin/{{_id}}">{{title}}</a></h1>
+							<a href="#" class="update_post">Update</a> |
+							<a href="#" class="delete_post">Delete</a>
+						</div>
+					{{else}}
+						<div id="{{_id}}" class="post drop_shadow">
+							<h1 class="title"><a href="{{_id}}">{{title}}</a></h1>
+							<h2>Posted on <span class="date">{{date}}</span></h2>
+							<p class="content">{{content}}</p>
+						</div>
+					{{/if}}
+				{{/each}}
+			{{/if}}
 		</div>
+</template>
+
+<template name="single_post">
+	<div id="posts">
+		{{#if is_admin}}
+			<div id="breadcrumb">
+				<a href="/">Home</a> > <a href="/admin">Admin</a> > <a href="/admin/{{id}}">{{title}}</a>
+			</div>
+			<div class="post drop_shadow">
+				<h1 class="title" contentEditable="true">{{title}}</h1>
+				<h2>Posted on <span class="date" contentEditable="true">{{date}}</span></h2>
+				<p class="content" contentEditable="true">{{content}}</p>
+			</div>
+		{{else}}
+			<div id="breadcrumb">
+				<a href="/">Home</a> > <a href="/{{_id}}">{{title}}</a>
+			</div>
+			<div class="post drop_shadow">
+				<h1 class="title">{{title}}</h1>
+				<h2>Posted on <span class="date">{{date}}</span></h2>
+				<p class="content">{{content}}</p>
+			</div>
+		{{/if}}
+	</div>
 </template>
 
 <template name="sidebar">
@@ -50,7 +86,7 @@
 			<h1>Latest Posts</h1>
 			<ul id="latest">
 			{{#each posts}}
-				<li>{{title}}</li>
+				<li><a href="/{{_id}}">{{title}}</a></li>
 			{{/each}}
 			</ul>
 		</div>
@@ -58,5 +94,7 @@
 </template>
 
 <template name="footer">
-
+	<footer>
+		<a href="/admin">Admin Panel</a>
+	</footer>
 </template>

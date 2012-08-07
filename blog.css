@@ -31,6 +31,7 @@ header {
 #editor_wrapper {
 	background: white;
 	border: 1px solid #ddd;
+	margin-top: 10px;
 	padding: 10px;
 }
 
@@ -47,6 +48,13 @@ header {
 #posts {
 	width: 70%;
 	float: left;
+}
+
+#breadcrumb {
+	margin-top: 10px;
+	padding: 10px;
+	background: white;
+	border: 1px solid #ddd;
 }
 
 .post {
@@ -105,4 +113,8 @@ header {
 footer {
 	clear: both;
 	width: 100%;
+	background: white;
+	border: 1px solid #ddd;
+	margin-top: 10px;
+	padding: 10px;
 }
