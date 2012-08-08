@@ -103,10 +103,14 @@ if (Meteor.is_client) {
     }
 
     //Footer
+    
+    Template.footer.is_admin = function () {
+      return Session.get('is_admin');
+    }
 
-    /**
-     * Routers
-     */
+  /**
+   * Routers
+   */
 
     var BlogRouter = Backbone.Router.extend({
       routes: {
@@ -129,8 +133,11 @@ if (Meteor.is_client) {
 
     Router = new BlogRouter;
 
-    Meteor.startup(function () {
+  /**
+   * Startup
+   */
 
+    Meteor.startup(function () {
       Backbone.history.start({pushState: true});
     });
 

@@ -12,6 +12,7 @@ p {
 #wrapper {
 	width: 960px;
 	margin: auto;
+	overflow: hidden;
 }
 
 /* Helper Styles */
@@ -33,6 +34,7 @@ header {
 	border: 1px solid #ddd;
 	margin-top: 10px;
 	padding: 10px;
+	overflow: hidden;
 }
 
 #add_post {
@@ -48,6 +50,7 @@ header {
 #posts {
 	width: 70%;
 	float: left;
+	overflow: hidden;
 }
 
 #breadcrumb {
@@ -98,6 +101,7 @@ header {
 	background: white;
 	border: 1px solid #ddd;
 	padding: 10px;
+	overflow: hidden;
 }
 
 #latest {
@@ -115,6 +119,5 @@ footer {
 	width: 100%;
 	background: white;
 	border: 1px solid #ddd;
-	margin-top: 10px;
 	padding: 10px;
 }

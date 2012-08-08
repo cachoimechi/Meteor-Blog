@@ -3,17 +3,21 @@
 </head>
 
 <body>
+	{{> header}}
 	<div id="wrapper">
-		{{> header}}
 		{{> posts}}
 		{{> sidebar}}
 		{{> footer}}
 	</div>
 </body>
 
+<!-- Header -->
+
 <template name="header">
 
 </template>
+
+<!-- Editor -->
 
 <template name="editor">
 	<div id="editor_wrapper" class="drop_shadow">
@@ -28,6 +32,8 @@
 		</div>
 	</div>
 </template>
+
+<!-- Posts -->
 
 <template name="posts">
 		<div id="posts">
@@ -56,6 +62,8 @@
 		</div>
 </template>
 
+<!-- Single Post -->
+
 <template name="single_post">
 	<div id="posts">
 		{{#if is_admin}}
@@ -80,6 +88,8 @@
 	</div>
 </template>
 
+<!-- Sidebar -->
+
 <template name="sidebar">
 	<aside id="sidebar" class="drop_shadow">
 		<div id="latest_posts">
@@ -93,8 +103,14 @@
 	</aside>
 </template>
 
+<!-- Footer -->
+
 <template name="footer">
 	<footer>
-		<a href="/admin">Admin Panel</a>
+		{{#if is_admin}}
+			
+		{{else}}
+			<a href="/admin">Admin Panel</a>
+		{{/if}}
 	</footer>
 </template>
